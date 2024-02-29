@@ -8,8 +8,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.algaworks.model.builder.PedidoVendaBuilder;
-
 public class PedidoVendaTest {
 
 	@Test
@@ -38,20 +36,8 @@ public class PedidoVendaTest {
 		
 		assertEquals(new BigDecimal("576").doubleValue(), valorTotal.doubleValue(), 0.0001);
 	}
-	
-	@Test
-	public void deveCalcularValorTotalPedidoParaClienteVipComBuilder() {
-		PedidoVenda pedidoVenda = new PedidoVendaBuilder()
-										.comClienteVip("João Silva")
-										.comItem("Calculadora", 2, "200")
-										.comItem("Mochila", 1, "200")
-										.comNumero("02020")
-										.construir();
-		
-		BigDecimal valorTotal = pedidoVenda.getValorTotal();
-		
-		assertEquals(new BigDecimal("576").doubleValue(), valorTotal.doubleValue(), 0.0001);
-	}
+
+
 	
 }
 
